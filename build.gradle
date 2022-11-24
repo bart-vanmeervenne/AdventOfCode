@@ -1,0 +1,50 @@
+plugins {
+    id 'java'
+}
+
+group 'org.bvm'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.0'
+    testImplementation 'org.assertj:assertj-core:3.23.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.0'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+task generateDayDirs() {
+    doFirst {
+        mkdir("src/main/java/org/bvm/oac/puzzles/day1")
+        mkdir("src/main/java/org/bvm/oac/puzzles/day2")
+        mkdir("src/main/java/org/bvm/oac/puzzles/day3")
+        mkdir("src/main/java/org/bvm/oac/puzzles/day4")
+        mkdir("src/main/java/org/bvm/oac/puzzles/day5")
+        mkdir("src/main/java/org/bvm/oac/puzzles/day6")
+        mkdir("src/main/java/org/bvm/oac/puzzles/day7")
+        mkdir("src/main/java/org/bvm/oac/puzzles/day8")
+        mkdir("src/main/java/org/bvm/oac/puzzles/day9")
+        mkdir("src/main/java/org/bvm/oac/puzzles/day10")
+        mkdir("src/main/java/org/bvm/oac/puzzles/day11")
+        mkdir("src/main/java/org/bvm/oac/puzzles/day12")
+        mkdir("src/main/java/org/bvm/oac/puzzles/day13")
+        mkdir("src/main/java/org/bvm/oac/puzzles/day14")
+        mkdir("src/main/java/org/bvm/oac/puzzles/day15")
+        mkdir("src/main/java/org/bvm/oac/puzzles/day16")
+        mkdir("src/main/java/org/bvm/oac/puzzles/day17")
+        mkdir("src/main/java/org/bvm/oac/puzzles/day18")
+        mkdir("src/main/java/org/bvm/oac/puzzles/day19")
+        mkdir("src/main/java/org/bvm/oac/puzzles/day20")
+        mkdir("src/main/java/org/bvm/oac/puzzles/day21")
+        mkdir("src/main/java/org/bvm/oac/puzzles/day22")
+        mkdir("src/main/java/org/bvm/oac/puzzles/day23")
+        mkdir("src/main/java/org/bvm/oac/puzzles/day24")
+        mkdir("src/main/java/org/bvm/oac/puzzles/day25")
+    }
+}
