@@ -11,8 +11,9 @@ public class  BaseSolution<T> {
         return solution.toString();
     }
 
-    public void print() {
-        printBox(getSolutionString());
+    @Override
+    public String toString() {
+        return getBoxString(getSolutionString());
     }
 
     private static int getMaxLength(String... strings) {
@@ -31,17 +32,13 @@ public class  BaseSolution<T> {
         return String.valueOf(ch).repeat(Math.max(0, len));
     }
 
-    private static void printBox(String... strings) {
+    private static String getBoxString(String... strings) {
         int maxBoxWidth = getMaxLength(strings);
-        String line = "+" + fill('-', maxBoxWidth + 2) + "+";
-        System.out.println(line);
+        StringBuilder result = new StringBuilder("+" + fill('-', maxBoxWidth + 2) + "+\n");
         for (String str : strings) {
-            System.out.printf("| %s |%n", padString(str, maxBoxWidth));
+            result.append(String.format("| %s |%n", padString(str, maxBoxWidth)));
         }
-        System.out.println(line);
-    }
-
-    public static <T> void printSolution(T solution) {
-        new BaseSolution<T>(solution).print();
+        result.append("+").append(fill('-', maxBoxWidth + 2)).append("+\n");
+        return result.toString();
     }
 }
