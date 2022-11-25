@@ -13,6 +13,10 @@ public class  BaseSolution<T> {
 
     @Override
     public String toString() {
+        String solutionString = getSolutionString();
+        if (solutionString.trim().isEmpty()) {
+            return "";
+        }
         return getBoxString(getSolutionString());
     }
 

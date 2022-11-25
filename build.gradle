@@ -1,5 +1,10 @@
 plugins {
-    id 'java'
+    id 'application'
+}
+apply plugin : 'java'
+
+application {
+    getMainClass().set("org.bvm.aoc.puzzles.Main")
 }
 
 group 'org.bvm'
@@ -20,7 +25,7 @@ test {
 }
 
 task generateDayClasses {
-    def days = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25]
+    def days = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]
     days.forEach(day -> {
         String path = "src/main/java/org/bvm/aoc/puzzles/day${day}"
         // create the folders if it does not exist.(otherwise it will throw exception)
@@ -30,7 +35,7 @@ task generateDayClasses {
         }
 
         if (!new File(path + "/Day${day}.java").exists()) {
-            new File(path + "/Day${day}.java").text ="""
+            new File(path + "/Day${day}.java").text = """
 package org.bvm.aoc.puzzles.day${day};
 
 import org.bvm.aoc.puzzles.BaseDay;
@@ -52,6 +57,26 @@ public class Day${day} extends BaseDay {
     }
 }
 """
+        }
+    })
+}
+
+task generateInputFiles {
+    def days = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]
+    days.forEach(day -> {
+        String path = "src/main/resources/"
+        // create the folders if it does not exist.(otherwise it will throw exception)
+        File extraFolder = new File(path)
+        if (!extraFolder.exists()) {
+            extraFolder.mkdirs()
+        }
+
+        if (!new File(path + "/input-${day}.1").exists()) {
+            new File(path + "/input-${day}.1").text = """"""
+        }
+
+        if (!new File(path + "/input-${day}.2").exists()) {
+            new File(path + "/input-${day}.2").text = """"""
         }
     })
 }

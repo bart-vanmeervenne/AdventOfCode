@@ -1,6 +1,6 @@
 package org.bvm.aoc.util;
 
-import org.bvm.aoc.puzzles.day2.Instruction;
+import java.util.Objects;
 
 public class Position {
     private final int x;
@@ -18,22 +18,6 @@ public class Position {
     public Position add(Position other) {
         return of(getX() + other.getX(), getY() + other.getY());
     }
-
-    public Position applyInstruction(Instruction instruction) {
-        switch (instruction.getDirection()) {
-            case UP -> {
-                return of(x, Math.max(0, y - instruction.getDelta()));
-            }
-            case DOWN -> {
-                return of(x, y + instruction.getDelta());
-            }
-            case FORWARD -> {
-                return of(x + instruction.getDelta(), y);
-            }
-            default -> throw new RuntimeException("Unknown Direction");
-        }
-    }
-
     public int getX() {
         return x;
     }
@@ -45,5 +29,18 @@ public class Position {
     @Override
     public String toString() {
         return String.format("x: %s, y: %s", x, y);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o instanceof Position p) {
+            return p.getX() == getX() && p.getY() == getY();
+        }
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(x) + Objects.hashCode(y);
     }
 }
