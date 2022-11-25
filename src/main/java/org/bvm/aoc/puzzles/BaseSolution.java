@@ -1,4 +1,4 @@
-package org.bvm.oac.puzzles;
+package org.bvm.aoc.puzzles;
 
 public class  BaseSolution<T> {
     T solution;

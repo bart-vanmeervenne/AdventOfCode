@@ -1,26 +1,26 @@
-package org.bvm.oac.puzzles.day1;
+package org.bvm.aoc.puzzles.day1;
 
-import org.bvm.oac.puzzles.BaseDay;
-import org.bvm.oac.puzzles.BaseSolution;
+import org.bvm.aoc.puzzles.BaseDay;
+import org.bvm.aoc.puzzles.BaseSolution;
 
 import java.util.List;
 import java.util.stream.IntStream;
 
-public class First extends BaseDay {
+public class Day1 extends BaseDay {
 
-    public First() {
+    public Day1() {
         super(1);
     }
 
     @Override
-    public BaseSolution computeFirstPart() {
+    public BaseSolution<Long> computeFirstPart() {
         List<Integer> input = fileReader().read(Integer::parseInt);
         long result = IntStream.range(0, input.size() - 1).filter(i -> input.get(i) < input.get(i + 1)).count();
         return new BaseSolution<>(result);
     }
 
     @Override
-    public BaseSolution computeSecondPart() {
+    public BaseSolution<Long> computeSecondPart() {
         List<Integer> input = fileReader().read(Integer::parseInt);
         int[] windows = IntStream.range(0, input.size() - 2)
                 .map(i -> new Window(input.get(i), input.get(i + 1), input.get(i + 2)).sum()).toArray();

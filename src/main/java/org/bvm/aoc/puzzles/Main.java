@@ -1,4 +1,4 @@
-package org.bvm.oac.puzzles;
+package org.bvm.aoc.puzzles;
 
 import java.util.Collection;
 import java.util.stream.Collectors;

@@ -1,6 +1,6 @@
-package org.bvm.oac.util;
+package org.bvm.aoc.util;
 
-import org.bvm.oac.puzzles.day2.Instruction;
+import org.bvm.aoc.puzzles.day2.Instruction;
 
 public class Position {
     private final int x;

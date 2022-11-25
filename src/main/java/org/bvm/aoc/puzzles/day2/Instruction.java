@@ -1,4 +1,4 @@
-package org.bvm.oac.puzzles.day2;
+package org.bvm.aoc.puzzles.day2;
 
 public class Instruction {
     Direction direction;

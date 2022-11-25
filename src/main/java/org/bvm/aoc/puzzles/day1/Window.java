@@ -1,4 +1,4 @@
-package org.bvm.oac.puzzles.day1;
+package org.bvm.aoc.puzzles.day1;
 
 public class Window {
     int v1;

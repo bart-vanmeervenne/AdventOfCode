@@ -1,6 +1,6 @@
-package org.bvm.oac.puzzles;
+package org.bvm.aoc.puzzles;
 
-import org.bvm.oac.reader.FileReader;
+import org.bvm.aoc.reader.FileReader;
 
 public abstract class BaseDay {
     private FileReader reader;
@@ -19,8 +19,8 @@ public abstract class BaseDay {
         return reader;
     }
 
-    public abstract BaseSolution computeFirstPart();
-    public abstract BaseSolution computeSecondPart();
+    public abstract BaseSolution<?> computeFirstPart();
+    public abstract BaseSolution<?> computeSecondPart();
 
     @Override
     public String toString() {
